@@ -1,2 +1,29 @@
-<h1>Breeds#index</h1>
-<p>Find me in app/views/breeds/index.html.erb</p>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder fst-italic text-warning" href="#">Doggy Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarLinks">
+                <ul class="navbar-nav me-auto fw-bold text-uppercase small">
+                    <li class="nav-item px-3">
+                        <a class="nav-link active" href="#">Breeds</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" id="firstInput" type="search" placeholder="CATEGORY">
+                    <input class="form-control me-2" id="secondInput" type="search" placeholder="NAME">
+                    <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</body>
