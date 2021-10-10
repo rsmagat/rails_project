@@ -25,4 +25,26 @@
             </div>
         </div>
     </nav>
+    <!-- CONTENT -->
+    <div class="container h-100">
+        <div class="row justify-content-center">
+            <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+                <h1 class="fst-italic fw-bold">About</h1>
+                <hr>
+                <div class="mt-5 fs-5">
+                    <p>The only data that I decided to use is <b><a href="https://dog.ceo/dog-api/documentation/">Dog
+                        API</a></b>. The data is about different types of dog breeds which the dataset
+                        from them is taken from the original <b><a href="http://vision.stanford.edu/aditya86/ImageNetDogs/">Standford Dogs Dataset</a></b>.
+                        It uses JSON and nested hashes for its data structure. The required tables are <b>Categories</b> and <b>Breeds</b> where categories table
+                        contains 'category_id (PK)' and 'category_name'. While the breeds table will contain 'breed_id (PK)', 'category_id (FK)', 'breed_name', and
+                        'image_url'.
+                    </p>
+                    <div class="mt-5">
+                        <h4 class="mb-4"><b>Entity Relationship Diagram (ERD)</b></h4>
+                        <p class="text-center"><%= image_tag 'ERD.png', class:"img-fluid" %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

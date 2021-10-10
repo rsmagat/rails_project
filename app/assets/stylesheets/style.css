@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -21,4 +22,18 @@ body {
     }
     .navbar #firstInput, .navbar #secondInput::-webkit-input-placeholder, .navbar .btn{
         font-size: 13px;
+    }
+
+.container {
+
+}
+    .container .col-8 {
+        background-color: #f4f5f6;
+    }
+    .container .mt-5 {
+        text-align: justify;
+
+    }
+    .container .mt-5 b a {
+        text-decoration: none;
     }
