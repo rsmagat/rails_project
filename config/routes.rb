@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'breeds/index'
-  get 'breeds/show'
-  get 'categories/index'
-  get 'categories/show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/breeds", to: "breeds#index", as: "breeds"
+  get "/breeds/:id", to: "breeds#show", as: "breed"
+  get "/categories", to: "categories#index", as: "categories"
+  get "/categories/:id", to: "categories#show", as: "category"
 end
