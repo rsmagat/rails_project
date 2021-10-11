@@ -26,4 +26,29 @@
             </div>
         </div>
     </nav>
+    <!-- CONTENT -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+                <h1 class="fst-italic fw-bold">Breeds</h1>
+                <hr>
+                <div class="mt-5 fs-5 text-capitalize d-flex flex-wrap justify-content-center">
+                    <% @breeds.each do |breed| %>
+                        <div class="p-2">
+                            <div class="d-flex flex-wrap justify-content-center" id="breed">
+                                <div class="card w-100 p-2">
+                                    <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid" %></p>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title fw-bold"><%= breed.breed_name %></h5>
+                                            <p class="card-text"><%= breed.category.category_name %></p>
+                                            <a href="#" class="btn btn-primary">Check its breeds</a>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

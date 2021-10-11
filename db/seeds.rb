@@ -23,15 +23,19 @@ dog_breeds["message"].each do |breed, sub_breed|
 
   if !dog_breeds["message"][breed.to_s].empty?
     sub_breed.each do |sb|
+      sb_image = dog_fetch(sub_breed_image(breed, sb).to_s)
+
       is_sub_breed = category.breeds.create(
         breed_name: sb.to_s,
-        image_url:  sub_breed_image(breed, sb).to_s
+        image_url:  sb_image["message"]
       )
     end
   else
+    b_image = dog_fetch(breed_image(breed).to_s)
+
     breed = category.breeds.create(
       breed_name: breed.to_s,
-      image_url:  breed_image(breed).to_s
+      image_url:  b_image["message"]
     )
   end
 end

@@ -37,3 +37,13 @@ body {
     .container .mt-5 b a {
         text-decoration: none;
     }
+    .container #breed {
+        width: 200px;
+    }
+    .container .card {
+        height: 400px;
+    }
+    .container .card-img-top {
+        height: 200px;
+        width: auto;
+    }

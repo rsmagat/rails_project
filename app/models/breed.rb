@@ -2,5 +2,5 @@ class Breed < ApplicationRecord
     belongs_to :category
 
     validates :breed_name, :image_url, presence: true
-    validiates :breed_name, length: { maximum: 100 }
+    validates :breed_name, length: { maximum: 100 }
 end
