@@ -26,4 +26,22 @@
             </div>
         </div>
     </nav>
+    <!-- CONTENT -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+                <h1 class="fst-italic fw-bold">Categories</h1>
+                <hr>
+                <div class="mt-5 fs-5">
+                    <% @categories.each do |category| %>
+                        <% if category.breed_type == "master_has_sub" %>
+                            <ul>
+                                <li id="category_name"><a class="text-capitalize" href="#"><%= category.category_name %></a></li>
+                            </ul>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -43,13 +42,20 @@ body {
     .container .card {
         height: 400px;
     }
+    .container .card-title {
+        font-size: 18px;
+    }
+    .container .card-text {
+        font-size: 15px;
+    }
     .container .card-img-top {
         height: 200px;
     }
     .container #btn_font {
-        font-size: small;
+        font-size: 11px;
         text-transform: uppercase;
     }
-    .container .card-text {
-
+    .container #category_name, .container #category_name a {
+        text-decoration: none;
+        list-style-type: circle;
     }

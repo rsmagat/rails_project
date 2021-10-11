@@ -19,9 +19,12 @@ Category.delete_all
 dog_breeds = dog_fetch("https://dog.ceo/api/breeds/list/all")
 
 dog_breeds["message"].each do |breed, sub_breed|
-  category = Category.create(category_name: breed)
-
   if !dog_breeds["message"][breed.to_s].empty?
+    category = Category.create(
+        category_name: breed,
+        breed_type: 'master_has_sub'
+    )
+
     sub_breed.each do |sb|
       sb_image = dog_fetch(sub_breed_image(breed, sb).to_s)
 
@@ -33,6 +36,11 @@ dog_breeds["message"].each do |breed, sub_breed|
     end
   else
     b_image = dog_fetch(breed_image(breed).to_s)
+
+    category = Category.create(
+        category_name: breed,
+        breed_type: 'master_has_no_sub'
+      )
 
     breed = category.breeds.create(
       breed_name: breed.to_s,

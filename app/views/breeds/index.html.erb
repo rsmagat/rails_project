@@ -36,13 +36,13 @@
                     <% @breeds.each do |breed| %>
                         <div class="p-4 border">
                             <div class="d-flex flex-wrap justify-content-center" id="breed">
-                                <div class="card w-100 p-2 border border-light shadow">
+                                <div class="card w-100 p-2 border border-primary shadow">
                                     <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-dark" %></p>
                                         <div class="card-body text-center">
                                             <h5 class="card-title fw-bold text-capitalize text-primary"><%= breed.breed_name %></h5>
                                             <% if breed.breed_type == "sub" %>
                                                 <p class="card-text text-capitalize text-warning"><%= breed.category.category_name %></p>
-                                                <a href="#" class="btn btn-primary" id="btn_font">Check similar breeds</a>
+                                                <a href="#" class="btn btn-primary mt-4" id="btn_font">Similar breeds</a>
                                             <% else %>
                                                 <p class="card-text text-warning">Master Breed</p>
                                             <% end %>
