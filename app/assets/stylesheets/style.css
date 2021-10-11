@@ -45,5 +45,11 @@ body {
     }
     .container .card-img-top {
         height: 200px;
-        width: auto;
+    }
+    .container #btn_font {
+        font-size: small;
+        text-transform: uppercase;
+    }
+    .container .card-text {
+
     }

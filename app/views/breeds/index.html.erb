@@ -32,16 +32,20 @@
             <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
                 <h1 class="fst-italic fw-bold">Breeds</h1>
                 <hr>
-                <div class="mt-5 fs-5 text-capitalize d-flex flex-wrap justify-content-center">
+                <div class="mt-5 fs-5 d-flex flex-wrap justify-content-center">
                     <% @breeds.each do |breed| %>
-                        <div class="p-2">
+                        <div class="p-4 border">
                             <div class="d-flex flex-wrap justify-content-center" id="breed">
-                                <div class="card w-100 p-2">
-                                    <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid" %></p>
+                                <div class="card w-100 p-2 border border-light shadow">
+                                    <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-dark" %></p>
                                         <div class="card-body text-center">
-                                            <h5 class="card-title fw-bold"><%= breed.breed_name %></h5>
-                                            <p class="card-text"><%= breed.category.category_name %></p>
-                                            <a href="#" class="btn btn-primary">Check its breeds</a>
+                                            <h5 class="card-title fw-bold text-capitalize text-primary"><%= breed.breed_name %></h5>
+                                            <% if breed.breed_type == "sub" %>
+                                                <p class="card-text text-capitalize text-warning"><%= breed.category.category_name %></p>
+                                                <a href="#" class="btn btn-primary" id="btn_font">Check similar breeds</a>
+                                            <% else %>
+                                                <p class="card-text text-warning">Master Breed</p>
+                                            <% end %>
                                         </div>
                                 </div>
                             </div>

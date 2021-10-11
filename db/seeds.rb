@@ -27,7 +27,8 @@ dog_breeds["message"].each do |breed, sub_breed|
 
       is_sub_breed = category.breeds.create(
         breed_name: sb.to_s,
-        image_url:  sb_image["message"]
+        image_url:  sb_image["message"],
+        breed_type: 'sub'
       )
     end
   else
@@ -35,7 +36,8 @@ dog_breeds["message"].each do |breed, sub_breed|
 
     breed = category.breeds.create(
       breed_name: breed.to_s,
-      image_url:  b_image["message"]
+      image_url:  b_image["message"],
+      breed_type: 'master'
     )
   end
 end
