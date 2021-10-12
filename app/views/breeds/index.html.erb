@@ -31,12 +31,13 @@
         <div class="row justify-content-center">
             <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
                 <h1 class="fst-italic fw-bold">Breeds</h1>
+                <h5 class="text-muted fst-italic">Lists of all breeds<h5>
                 <hr>
                 <div class="mt-5 fs-5 d-flex flex-wrap justify-content-center">
                     <% @breeds.each do |breed| %>
                         <div class="p-4 border">
                             <div class="d-flex flex-wrap justify-content-center" id="breed">
-                                <div class="card w-100 p-2 border border-primary shadow">
+                                <div class="card w-100 p-2 border shadow">
                                     <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-dark" %></p>
                                         <div class="card-body text-center">
                                             <h5 class="card-title fw-bold text-capitalize text-primary"><%= link_to breed.breed_name, breed_path(breed), class: "text-decoration-none" %></h5>
