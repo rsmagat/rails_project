@@ -38,7 +38,7 @@
                         <div class="p-4 border">
                             <div class="d-flex flex-wrap justify-content-center" id="breed">
                                 <div class="card w-100 p-2 border shadow">
-                                    <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-dark" %></p>
+                                    <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-light" %></p>
                                         <div class="card-body text-center">
                                             <h5 class="card-title fw-bold text-capitalize text-primary"><%= link_to breed.breed_name, breed_path(breed), class: "text-decoration-none" %></h5>
                                             <% if breed.breed_type == "sub" %>
@@ -56,4 +56,14 @@
             </div>
         </div>
     </div>
+    <!-- FOOTER -->
+    <footer class="pt-4 shadow-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="text-center"><small> Copyright &copy; 2021, Remelson Magat, WEBDEV - 3008.</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
