@@ -2,7 +2,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bolder fst-italic text-warning" href="#">Doggy Finder</a>
+            <a class="navbar-brand fw-bolder fst-italic text-warning" href="<%= breeds_path %>">Doggy Finder</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,10 +39,10 @@
                                 <div class="card w-100 p-2 border border-primary shadow">
                                     <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-dark" %></p>
                                         <div class="card-body text-center">
-                                            <h5 class="card-title fw-bold text-capitalize text-primary"><%= breed.breed_name %></h5>
+                                            <h5 class="card-title fw-bold text-capitalize text-primary"><%= link_to breed.breed_name, breed_path(breed), class: "text-decoration-none" %></h5>
                                             <% if breed.breed_type == "sub" %>
                                                 <p class="card-text text-capitalize text-warning"><%= breed.category.category_name %></p>
-                                                <a href="#" class="btn btn-primary mt-4" id="btn_font">Similar breeds</a>
+                                                <%= link_to 'Similar breeds', category_path(breed.category.id), class: "btn btn-primary mt-4", id: "btn_font" %>
                                             <% else %>
                                                 <p class="card-text text-warning">Master Breed</p>
                                             <% end %>
