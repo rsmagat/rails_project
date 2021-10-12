@@ -42,20 +42,21 @@ body {
     .container .card {
         height: 400px;
     }
-    .container .card-title {
-        font-size: 18px;
-    }
     .container .card-text {
-        font-size: 15px;
+        font-size: 16px;
     }
     .container .card-img-top {
         height: 200px;
     }
-    .container #btn_font {
-        font-size: 11px;
+    .container #btn_font, .container .btn {
+        font-size: 12px;
         text-transform: uppercase;
     }
     .container #category_name, .container #category_name a, .container #breed_name, .container #breed_name a {
         text-decoration: none;
         list-style-type: circle;
+    }
+    .container #breed_image {
+        height: 400px;
+        width: auto;
     }
