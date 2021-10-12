@@ -55,7 +55,7 @@ body {
         font-size: 11px;
         text-transform: uppercase;
     }
-    .container #category_name, .container #category_name a {
+    .container #category_name, .container #category_name a, .container #breed_name, .container #breed_name a {
         text-decoration: none;
         list-style-type: circle;
     }

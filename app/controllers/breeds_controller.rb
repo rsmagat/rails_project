@@ -4,5 +4,6 @@ class BreedsController < ApplicationController
   end
 
   def show
+    @breed = Breed.find_by(params[:id])
   end
 end

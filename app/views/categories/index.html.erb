@@ -36,7 +36,7 @@
                     <% @categories.each do |category| %>
                         <% if category.breed_type == "master_has_sub" %>
                             <ul>
-                                <li id="category_name"><a class="text-capitalize" href="#"><%= category.category_name %></a></li>
+                                <li id="category_name"><%= link_to category.category_name, category_path(category), class: "text-capitalize" %></li>
                             </ul>
                         <% end %>
                     <% end %>
