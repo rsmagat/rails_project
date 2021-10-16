@@ -1,6 +1,6 @@
 class BreedsController < ApplicationController
   def index
-    @breeds = Breed.includes(:category).all
+    @breeds = Breed.includes(:category).page params[:page]
   end
 
   def show

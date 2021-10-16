@@ -32,6 +32,7 @@
             <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
                 <h1 class="fst-italic fw-bold">Breeds</h1>
                 <h5 class="text-muted fst-italic">Lists of all breeds<h5>
+                <%= paginate @breeds, window: 2 %>
                 <hr>
                 <div class="mt-5 fs-5 d-flex flex-wrap justify-content-center">
                     <% @breeds.each do |breed| %>
