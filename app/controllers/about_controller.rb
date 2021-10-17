@@ -1,4 +1,6 @@
 class AboutController < ApplicationController
-  def index
-  end
+    def search
+        wildcard_search = "%#{params[:keywords]}%"
+        @breeds = Breed.where("breed_name LIKE ?", wildcard_search)
+    end
 end

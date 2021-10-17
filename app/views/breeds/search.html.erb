@@ -9,12 +9,13 @@
             <div class="collapse navbar-collapse" id="navbarLinks">
                 <ul class="navbar-nav me-auto fw-bold text-uppercase small">
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="<%= breeds_path %>">Breeds</a>
+                        <a class="nav-link active" href="<%= breeds_path %>">Breeds</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="<%= categories_path %>">Categories</a>
+                    </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link active" href="<%= about_path %>">About</a>
+                        <a class="nav-link" href="<%= about_path %>">About</a>
                     </li>
                 </ul>
                 <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
@@ -29,22 +30,22 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
-                <h1 class="fst-italic fw-bold">About</h1>
-                <h5 class="text-muted fst-italic">Information about the website<h5>
+                <h1 class="fst-italic fw-bold">Search
+                <% if @breeds.count > 1 || @breeds.count === 0 %>
+                    Results
+                <% else %>
+                    Result
+                <% end %></h1>
+                <h5 class="text-muted fst-italic">Found <%= pluralize(@breeds.count, 'Result') %> when searching for "<%= params[:keywords] %>"<h5>
                 <hr>
                 <div class="mt-5 fs-5">
-                    <p>The only data that I decided to use is <b><a href="https://dog.ceo/dog-api/documentation/">Dog
-                        API</a></b>. The data is about different types of dog breeds which the dataset
-                        from them is taken from the original <b><a href="http://vision.stanford.edu/aditya86/ImageNetDogs/">Standford Dogs Dataset</a></b>.
-                        It uses JSON and nested hashes for its data structure. The required tables are <b>Categories</b> and <b>Breeds</b> where categories table
-                        contains 'category_id (PK)', 'category_name', and 'breed_type'. While the breeds table will contain 'breed_id (PK)', 'category_id (FK)', 'breed_name',
-                        'image_url', and 'breed_type'.
-                    </p>
-                    <div class="mt-5">
-                        <h4 class="mb-4"><b>Entity Relationship Diagram (ERD)</b></h4>
-                        <p class="text-center"><%= image_tag 'ERD.png', class:"img-fluid" %></p>
-                    </div>
+                    <% @breeds.each do |breed| %>
+                        <ul>
+                            <li id="category_name"><%= link_to breed.breed_name, breed, class: "text-capitalize" %></li>
+                        </ul>
+                    <% end %>
                 </div>
+                <%= link_to "Back to Breeds", breeds_path, class: "btn btn-primary mt-5" %>
             </div>
         </div>
     </div>
