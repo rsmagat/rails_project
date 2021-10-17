@@ -1,5 +1,6 @@
 require "open-uri"
 require "json"
+require 'faker'
 
 def dog_fetch(url)
   JSON.parse(URI.open(url).read)

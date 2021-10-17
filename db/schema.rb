@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_11_204531) do
+ActiveRecord::Schema.define(version: 2021_10_17_235550) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "breed_name"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 2021_10_11_204531) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id", null: false
     t.string "breed_type"
+    t.string "breed_sound"
+    t.string "breed_meme_phrase"
+    t.string "breed_coat_length"
+    t.string "breed_size"
     t.index ["category_id"], name: "index_breeds_on_category_id"
   end
 
