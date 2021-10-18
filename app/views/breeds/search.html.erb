@@ -1,4 +1,4 @@
-<body>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container-fluid">
@@ -36,17 +36,16 @@
                 <% else %>
                     Result
                 <% end %></h1>
-                <h5 class="text-muted fst-italic">Found <%= pluralize(@breeds.count, 'Result') %> when searching for "<%= params[:keywords] %>"<h5>
+                <h5 class="text-muted fst-italic">Found <%= pluralize(@breeds.count, 'Result') %> when searching for "<%= params[:keywords] %>"</h5>
                 <hr>
                 <div class="mt-5 fs-5">
-                    <% @breeds.each do |breed| %>
-                        <ul>
-                            <li id="category_name"><%= link_to breed.breed_name, breed, class: "text-capitalize" %></li>
-                        </ul>
-                    <% end %>
+                    <ul>
+                        <% @breeds.each do |breed| %>
+                                <li class="category_name"><%= link_to breed.breed_name, breed, class: "text-capitalize" %></li>
+                        <% end %>
+                    </ul>
                 </div>
                 <%= link_to "Back to Breeds", breeds_path, class: "btn btn-primary mt-5" %>
             </div>
         </div>
     </div>
-</body>

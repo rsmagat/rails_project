@@ -1,74 +1,72 @@
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bolder fst-italic text-warning" href="<%= breeds_path %>">Doggy Finder</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarLinks">
-                <ul class="navbar-nav me-auto fw-bold text-uppercase small">
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" href="<%= breeds_path %>">Breeds</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="<%= categories_path %>">Categories</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="<%= about_path %>">About</a>
-                    </li>
-                </ul>
-                <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
-                    <input class="form-control me-2" id="firstInput" type="search" placeholder="CATEGORY">
-                    <input class="form-control me-2" id="secondInput" name="keywords" type="search" placeholder="NAME">
-                    <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
-                </form>
-            </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bolder fst-italic text-warning" href="<%= breeds_path %>">Doggy Finder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarLinks">
+            <ul class="navbar-nav me-auto fw-bold text-uppercase small">
+                <li class="nav-item px-3">
+                    <a class="nav-link active" href="<%= breeds_path %>">Breeds</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="<%= categories_path %>">Categories</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="<%= about_path %>">About</a>
+                </li>
+            </ul>
+            <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
+                <input class="form-control me-2" id="firstInput" type="search" placeholder="CATEGORY">
+                <input class="form-control me-2" id="secondInput" name="keywords" type="search" placeholder="NAME">
+                <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
+            </form>
         </div>
-    </nav>
-    <!-- CONTENT -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
-                <h1 class="fst-italic fw-bold">Breeds</h1>
-                <h5 class="text-muted fst-italic">Lists of all breeds<h5>
-                <%= paginate @breeds, window: 2 %>
-                <hr>
-                <div class="mt-5 fs-5 d-flex flex-wrap justify-content-center">
-                    <% @breeds.each do |breed| %>
-                        <div class="p-4 border">
-                            <div class="d-flex flex-wrap justify-content-center" id="breed">
-                                <div class="card w-100 p-2 border shadow">
-                                    <p class="text-center" id="dog_image"><%= image_tag breed.image_url, class:"card-img-top img-fluid border border-light" %></p>
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title fw-bold text-capitalize text-primary"><%= link_to breed.breed_name, breed_path(breed), class: "text-decoration-none" %></h5>
-                                            <% if breed.breed_type == "sub" %>
-                                                <p class="card-text text-capitalize text-warning"><%= breed.category.category_name %></p>
-                                                <%= link_to 'Similar breeds', category_path(breed.category.id), class: "btn btn-primary mt-4", id: "btn_font" %>
-                                            <% else %>
-                                                <p class="card-text text-warning">Master Breed</p>
-                                            <% end %>
-                                        </div>
-                                </div>
+    </div>
+</nav>
+<!-- CONTENT -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+            <h1 class="fst-italic fw-bold">Breeds</h1>
+            <h5 class="text-muted fst-italic">Lists of all breeds</h5>
+            <%= paginate @breeds, window: 2 %>
+            <hr>
+            <div class="mt-5 fs-5 d-flex flex-wrap justify-content-center">
+                <% @breeds.each do |breed| %>
+                    <div class="p-4 border">
+                        <div class="breed d-flex flex-wrap justify-content-center">
+                            <div class="card w-100 p-2 border shadow">
+                                <p class="text-center"><%= image_tag breed.image_url, class: "card-img-top img-fluid border border-light", alt: breed.breed_name %></p>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title fw-bold text-capitalize text-primary"><%= link_to breed.breed_name, breed_path(breed), class: "text-decoration-none" %></h5>
+                                        <% if breed.breed_type == "sub" %>
+                                            <p class="card-text text-capitalize text-warning"><%= breed.category.category_name %></p>
+                                            <%= link_to 'Similar breeds', category_path(breed.category.id), class: "btn btn-primary mt-4" %>
+                                        <% else %>
+                                            <p class="card-text text-warning">Master Breed</p>
+                                        <% end %>
+                                    </div>
                             </div>
                         </div>
-                    <% end %>
-                </div>
-                <div class="mt-5">
-                    <hr>
-                    <%= paginate @breeds, window: 2 %>
-                </div>
+                    </div>
+                <% end %>
+            </div>
+            <div class="mt-5">
+                <hr>
+                <%= paginate @breeds, window: 2 %>
             </div>
         </div>
     </div>
-    <!-- FOOTER -->
-    <footer class="pt-4 shadow-sm">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p class="text-center"><small> Copyright &copy; 2021, Remelson Magat, WEBDEV - 3008.</small></p>
-                </div>
+</div>
+<!-- FOOTER -->
+<footer class="pt-4 shadow-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="text-center"><small> Copyright &copy; 2021, Remelson Magat, WEBDEV - 3008.</small></p>
             </div>
         </div>
-    </footer>
-</body>
+    </div>
+</footer>

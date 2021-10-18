@@ -1,49 +1,47 @@
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bolder fst-italic text-warning" href="<%= breeds_path %>">Doggy Finder</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarLinks">
-                <ul class="navbar-nav me-auto fw-bold text-uppercase small">
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="<%= breeds_path %>">Breeds</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" href="<%= categories_path %>">Categories</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="<%= about_path %>">About</a>
-                    </li>
-                </ul>
-                <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
-                    <input class="form-control me-2" id="firstInput" type="search" placeholder="CATEGORY">
-                    <input class="form-control me-2" id="secondInput" name="keywords" type="search" placeholder="NAME">
-                    <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <!-- CONTENT -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
-                <h1 class="fst-italic fw-bold">Categories</h1>
-                <h5 class="text-muted fst-italic">List of breeds that have sub-breeds<h5>
-                <hr>
-                <div class="mt-5 fs-5">
-                    <% @categories.each do |category| %>
-                        <% if category.breed_type == "master_has_sub" %>
-                            <ul>
-                                <li id="category_name"><%= link_to category.category_name, category_path(category), class: "text-capitalize" %></li>
-                            </ul>
-                        <% end %>
-                    <% end %>
-                </div>
-                <%= link_to "Back to Breeds", breeds_path, class: "btn btn-primary mt-5" %>
-            </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bolder fst-italic text-warning" href="<%= breeds_path %>">Doggy Finder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarLinks">
+            <ul class="navbar-nav me-auto fw-bold text-uppercase small">
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="<%= breeds_path %>">Breeds</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" href="<%= categories_path %>">Categories</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="<%= about_path %>">About</a>
+                </li>
+            </ul>
+            <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
+                <input class="form-control me-2" id="firstInput" type="search" placeholder="CATEGORY">
+                <input class="form-control me-2" id="secondInput" name="keywords" type="search" placeholder="NAME">
+                <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
+            </form>
         </div>
     </div>
-</body>
+</nav>
+<!-- CONTENT -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+            <h1 class="fst-italic fw-bold">Categories</h1>
+            <h5 class="text-muted fst-italic">List of breeds that have sub-breeds</h5>
+            <hr>
+            <div class="mt-5 fs-5">
+                <ul>
+                    <% @categories.each do |category| %>
+                        <% if category.breed_type == "master_has_sub" %>
+                            <li class="category_name"><%= link_to category.category_name, category_path(category), class: "text-capitalize" %></li>
+                        <% end %>
+                    <% end %>
+                </ul>
+            </div>
+            <%= link_to "Back to Breeds", breeds_path, class: "btn btn-primary mt-5" %>
+        </div>
+    </div>
+</div>

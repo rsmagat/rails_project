@@ -36,7 +36,7 @@ body {
     .container .mt-5 b a {
         text-decoration: none;
     }
-    .container #breed {
+    .container .breed {
         width: 200px;
     }
     .container .card {
@@ -48,11 +48,11 @@ body {
     .container .card-img-top {
         height: 150px;
     }
-    .container #btn_font, .container .btn {
+    .container .btn {
         font-size: 12px;
         text-transform: uppercase;
     }
-    .container #category_name, .container #category_name a, .container #breed_name, .container #breed_name a {
+    .container .category_name, .container .category_name a, .container .breed_name, .container .breed_name a {
         text-decoration: none;
         list-style-type: circle;
     }
