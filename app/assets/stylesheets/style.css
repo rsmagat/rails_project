@@ -26,9 +26,6 @@ body {
     .container .col-8 {
         background-color: #f4f5f6;
     }
-    .container .mt-5 {
-        text-align: justify;
-    }
     .container .mt-5 b a {
         text-decoration: none;
     }

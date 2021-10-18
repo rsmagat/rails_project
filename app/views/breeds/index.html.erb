@@ -17,8 +17,8 @@
                     <a class="nav-link" href="<%= about_path %>">About</a>
                 </li>
             </ul>
-            <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
-                <select class="select form-select me-2 text-uppercase" id="firstInput" name="categories">
+            <form class="d-lg-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
+                <select class="select form-select me-2 text-uppercase my-1" id="firstInput" name="categories">
                     <option value="" selected>Choose a Category</option>
                     <% @categories.each do |category| %>
                         <% if category.breed_type == "master_has_sub" %>
@@ -26,8 +26,8 @@
                         <% end %>
                     <% end %>
                 </select>
-                <input class="form-control me-2" id="secondInput" name="keywords" type="search" placeholder="NAME">
-                <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
+                <input class="form-control me-2 my-1" id="secondInput" name="keywords" type="search" placeholder="NAME">
+                <button class="btn btn-success text-uppercase my-1" type="submit">Search</button>
             </form>
         </div>
     </div>
@@ -35,7 +35,7 @@
 <!-- CONTENT -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+        <div class="col-8 mt-5 mb-5 border rounded-3 p-3">
             <h1 class="fst-italic fw-bold">Breeds</h1>
             <h5 class="text-muted fst-italic">Lists of all breeds</h5>
             <%= paginate @breeds, window: 2 %>
@@ -67,13 +67,3 @@
         </div>
     </div>
 </div>
-<!-- FOOTER -->
-<footer class="pt-4 shadow-sm">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <p class="text-center"><small> Copyright &copy; 2021, Remelson Magat, WEBDEV - 3008.</small></p>
-            </div>
-        </div>
-    </div>
-</footer>
