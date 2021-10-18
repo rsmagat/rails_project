@@ -16,10 +16,7 @@ body {
     .navbar .dropdown-item {
         font-size: 12px;
     }
-    .navbar #firstInput {
-        width: 150px;
-    }
-    .navbar #firstInput, .navbar #secondInput::-webkit-input-placeholder, .navbar .btn{
+    .navbar #firstInput, .navbar #secondInput::-webkit-input-placeholder, .navbar .btn, .navbar select{
         font-size: 13px;
     }
 
@@ -31,7 +28,6 @@ body {
     }
     .container .mt-5 {
         text-align: justify;
-
     }
     .container .mt-5 b a {
         text-decoration: none;

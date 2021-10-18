@@ -19,7 +19,14 @@
                     </li>
                 </ul>
                 <form class="d-flex" action="<%= search_breeds_path %>" method="get" accept-charset="UTF-8">
-                    <input class="form-control me-2" id="firstInput" type="search" placeholder="CATEGORY">
+                    <select class="select form-select me-2 text-uppercase" id="firstInput" name="categories">
+                        <option value="" selected>Choose a Category</option>
+                        <% @categories.each do |category| %>
+                            <% if category.breed_type == "master_has_sub" %>
+                                <option value="<%= category.id %>"><%= category.category_name %></option>
+                            <% end %>
+                        <% end %>
+                    </select>
                     <input class="form-control me-2" id="secondInput" name="keywords" type="search" placeholder="NAME">
                     <button class="btn btn-outline-success text-uppercase" type="submit">Search</button>
                 </form>
