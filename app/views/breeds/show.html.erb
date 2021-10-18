@@ -45,6 +45,15 @@
                         <h5 class="text-capitalize"><b class="text-warning">Sub-Breed: </b><%= @breed.breed_name %></h5>
                     <% end %>
                 </div>
+                <hr class="mt-5">
+                <div class="ms-5">
+                    <h4 class="text-center fst-italic fw-bold mb-2">More Information</h4>
+                    <h5 class="text-capitalize"><b class="text-info">Sound: </b>"<%= @breed.breed_sound %>"</h5>
+                    <h5 class="text-capitalize"><b class="text-info">Meme Phrase: </b>"<%= @breed.breed_meme_phrase %>"</h5>
+                    <h5 class="text-capitalize"><b class="text-info">Coat Length: </b><%= @breed.breed_coat_length %></h5>
+                    <h5 class="text-capitalize"><b class="text-info">Breed Size </b><%= @breed.breed_size %></h5>
+
+                </div>
                 <div class="d-flex">
                     <%= link_to "Back to Categories", categories_path, class: "btn btn-primary mt-5 me-auto" %>
                     <%= link_to "Back to Breeds", breeds_path, class: "btn btn-primary mt-5" %>

@@ -23,7 +23,7 @@ dog_breeds["message"].each do |breed, sub_breed|
   if !dog_breeds["message"][breed.to_s].empty?
     category = Category.create(
         category_name: breed,
-        breed_type: 'master_has_sub'
+        breed_type: 'master_has_sub',
     )
 
     sub_breed.each do |sb|
@@ -32,7 +32,11 @@ dog_breeds["message"].each do |breed, sub_breed|
       is_sub_breed = category.breeds.create(
         breed_name: sb.to_s,
         image_url:  sb_image["message"],
-        breed_type: 'sub'
+        breed_type: 'sub',
+        breed_sound: Faker::Creature::Dog.sound,
+        breed_meme_phrase: Faker::Creature::Dog.meme_phrase,
+        breed_coat_length: Faker::Creature::Dog.coat_length,
+        breed_size: Faker::Creature::Dog.size
       )
     end
   else
@@ -46,7 +50,11 @@ dog_breeds["message"].each do |breed, sub_breed|
     breed = category.breeds.create(
       breed_name: breed.to_s,
       image_url:  b_image["message"],
-      breed_type: 'master'
+      breed_type: 'master',
+      breed_sound: Faker::Creature::Dog.sound,
+      breed_meme_phrase: Faker::Creature::Dog.meme_phrase,
+      breed_coat_length: Faker::Creature::Dog.coat_length,
+      breed_size: Faker::Creature::Dog.size
     )
   end
 end

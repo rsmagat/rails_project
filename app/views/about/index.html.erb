@@ -33,12 +33,12 @@
                 <h5 class="text-muted fst-italic">Information about the website<h5>
                 <hr>
                 <div class="mt-5 fs-5">
-                    <p>The only data that I decided to use is <b><a href="https://dog.ceo/dog-api/documentation/">Dog
-                        API</a></b>. The data is about different types of dog breeds which the dataset
-                        from them is taken from the original <b><a href="http://vision.stanford.edu/aditya86/ImageNetDogs/">Standford Dogs Dataset</a></b>.
-                        It uses JSON and nested hashes for its data structure. The required tables are <b>Categories</b> and <b>Breeds</b> where categories table
+                    <p id="about">The data that I decided to use is <b><a href="https://dog.ceo/dog-api/documentation/">Dog
+                        API</a></b> and <b><a href="https://github.com/faker-ruby/faker">Faker</a></b> . The data is about different types of dog breeds which the dataset
+                        from DogAPI is taken from the original <b><a href="http://vision.stanford.edu/aditya86/ImageNetDogs/">Standford Dogs Dataset</a></b>.
+                        It uses JSON and nested hashes for its data structure. Faker is going to be used to fill fake data for the breeds table. The required tables are <b>Categories</b> and <b>Breeds</b> where categories table
                         contains 'category_id (PK)', 'category_name', and 'breed_type'. While the breeds table will contain 'breed_id (PK)', 'category_id (FK)', 'breed_name',
-                        'image_url', and 'breed_type'.
+                        'image_url', 'breed_type', 'breed_sound', 'breed_meme_phrase', 'breed_coat_length', and 'breed_size'.
                     </p>
                     <div class="mt-5">
                         <h4 class="mb-4"><b>Entity Relationship Diagram (ERD)</b></h4>

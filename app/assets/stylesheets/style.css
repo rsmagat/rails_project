@@ -63,6 +63,9 @@ body {
     .container .text-muted {
         font-size: 16px;
     }
+    .container #about {
+        line-height: 30px;
+    }
 
 footer {
     height: 65px;
