@@ -23,7 +23,7 @@ body {
 .container {
 
 }
-    .container .col-8 {
+    .container .col-10 {
         background-color: #f4f5f6;
     }
     .container .mt-5 b a {
@@ -61,6 +61,6 @@ body {
     }
 
 footer {
-    height: 65px;
-    background-color: #e3f2fd;
+    background-color:#e3f2fd;
+    height: 55.96px;
 }

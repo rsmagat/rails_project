@@ -1,4 +1,3 @@
-
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container-fluid">
@@ -36,7 +35,7 @@
 <!-- CONTENT -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-8 mt-5 mb-5 border border-dark rounded-3 p-3">
+        <div class="col-10 mt-5 mb-5 border rounded-3 p-3">
             <h1 class="fst-italic fw-bold text-capitalize">
                 <% if @breed.breed_type == "sub" %>
                     <%= @breed.breed_name %> <%= @breed.category.category_name %>
@@ -54,7 +53,7 @@
             </div>
             <hr class="mt-5">
             <div class="ms-md-5">
-                <h4 class="text-center fst-italic fw-bold mb-5">More Information</h4>
+                <h4 class="text-center fst-italic fw-bold mb-3">More Information</h4>
                 <h5 class="text-capitalize"><b class="text-info">Sound: </b>"<%= @breed.breed_sound %>"</h5>
                 <h5 class="text-capitalize"><b class="text-info">Meme Phrase: </b>"<%= @breed.breed_meme_phrase %>"</h5>
                 <h5 class="text-capitalize"><b class="text-info">Coat Length: </b><%= @breed.breed_coat_length %></h5>
